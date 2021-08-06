@@ -1,0 +1,63 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "TestQiLiquidator",
+  "sourceName": "contracts/TestQiLiquidator.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_vaultId",
+          "type": "uint256"
+        }
+      ],
+      "name": "checkCost",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_vaultId",
+          "type": "uint256"
+        }
+      ],
+      "name": "checkLiquidation",
+      "outputs": [],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getPaid",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_vaultId",
+          "type": "uint256"
+        }
+      ],
+      "name": "liquidateVault",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50610132806100206000396000f3fe6080604052348015600f57600080fd5b506004361060465760003560e01c806311b4a83214604b57806390cf0bba14608a578063b86f6aef1460b5578063cf41d6f81460e0575b600080fd5b607460048036036020811015605f57600080fd5b810190808035906020019092919050505060e8565b6040518082815260200191505060405180910390f35b60b360048036036020811015609e57600080fd5b810190808035906020019092919050505060f4565b005b60de6004803603602081101560c957600080fd5b810190808035906020019092919050505060f7565b005b60e660fa565b005b60006103e89050919050565b50565b50565b56fea264697066735822122024e8c8bffbea99a622b9937f6fa109ccf4d17fc624d52544654deee803027e8664736f6c634300060c0033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060465760003560e01c806311b4a83214604b57806390cf0bba14608a578063b86f6aef1460b5578063cf41d6f81460e0575b600080fd5b607460048036036020811015605f57600080fd5b810190808035906020019092919050505060e8565b6040518082815260200191505060405180910390f35b60b360048036036020811015609e57600080fd5b810190808035906020019092919050505060f4565b005b60de6004803603602081101560c957600080fd5b810190808035906020019092919050505060f7565b005b60e660fa565b005b60006103e89050919050565b50565b50565b56fea264697066735822122024e8c8bffbea99a622b9937f6fa109ccf4d17fc624d52544654deee803027e8664736f6c634300060c0033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

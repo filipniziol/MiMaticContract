@@ -1,0 +1,744 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\MiMaticLiquidate.sol": {
+      "lastModificationDate": 1627235259063,
+      "contentHash": "08fa9c29e180ac538db3d185587d8ec4",
+      "sourceName": "contracts/MiMaticLiquidate.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Ownable.sol",
+        "./FlashLoanReceiverBase.sol",
+        "./Interfaces.sol",
+        "./Libraries.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "MiMaticLiquidate"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\FlashLoanReceiverBase.sol": {
+      "lastModificationDate": 1626075619609,
+      "contentHash": "e1b51188d2c7deb3f7f6aed0f3ef8556",
+      "sourceName": "contracts/FlashLoanReceiverBase.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces.sol",
+        "./Libraries.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "FlashLoanReceiverBase"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\Interfaces.sol": {
+      "lastModificationDate": 1628173617626,
+      "contentHash": "a4e4fe5fa69a1b736ce056cfa4aed40f",
+      "sourceName": "contracts/Interfaces.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Libraries.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "IAaveWETHGateway",
+        "IAmToken",
+        "ICamToken",
+        "IERC20",
+        "IFlashLoanReceiver",
+        "ILendingPool",
+        "ILendingPoolAddressesProvider",
+        "IQiLiquidator",
+        "IQiLiquidatorV2",
+        "IUniswapV2Router01",
+        "IUniswapV2Router02"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\Libraries.sol": {
+      "lastModificationDate": 1626075625644,
+      "contentHash": "1fd20ba8c4a2b3f3b95abf375442383e",
+      "sourceName": "contracts/Libraries.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "Address",
+        "DataTypes",
+        "SafeERC20",
+        "SafeMath"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\Ownable.sol": {
+      "lastModificationDate": 1626075449153,
+      "contentHash": "6f2dff51279c7013dfefc9aafe4dd717",
+      "sourceName": "contracts/Ownable.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.12"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\node_modules\\@openzeppelin\\contracts\\GSN\\Context.sol": {
+      "lastModificationDate": 1626100013532,
+      "contentHash": "a02aa4ae53018d92603a3ead2c365958",
+      "sourceName": "@openzeppelin/contracts/GSN/Context.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": []
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
+      "lastModificationDate": 1626100014053,
+      "contentHash": "e0a41531d159d3a32f84b7a3ecf9fabb",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\node_modules\\@openzeppelin\\contracts\\math\\SafeMath.sol": {
+      "lastModificationDate": 1626100014223,
+      "contentHash": "e03e12206057e809eb76c5f681170c32",
+      "sourceName": "@openzeppelin/contracts/math/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\node_modules\\@openzeppelin\\contracts\\utils\\Address.sol": {
+      "lastModificationDate": 1626100013466,
+      "contentHash": "7aa46886ff5abe7515496208a5e2ce5a",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2 <0.8.0"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {
+      "lastModificationDate": 1626100013540,
+      "contentHash": "2adbd82f6d055a4751566d4671512b03",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\node_modules\\@openzeppelin\\contracts\\token\\ERC20\\ERC20.sol": {
+      "lastModificationDate": 1626100013724,
+      "contentHash": "8065b340476f61365c076897199425f1",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/Context.sol",
+        "./IERC20.sol",
+        "../../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\TestERC20.sol": {
+      "lastModificationDate": 1626201029713,
+      "contentHash": "a99bcb86bc96bb791dce27afa6066fc9",
+      "sourceName": "contracts/TestERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "TestERC20"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\TestLendingPool.sol": {
+      "lastModificationDate": 1626862705282,
+      "contentHash": "3ef1b89bbd514e0589e73017d10ca2f9",
+      "sourceName": "contracts/TestLendingPool.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces.sol",
+        "./Libraries.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "TestLendingPool"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\TestLendingPoolAddressesProvider.sol": {
+      "lastModificationDate": 1626862705305,
+      "contentHash": "da91f4b6b4c210fe8bc2812da9fa57c9",
+      "sourceName": "contracts/TestLendingPoolAddressesProvider.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Ownable.sol",
+        "./Interfaces.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "TestLendingPoolAddressesProvider"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\TestUniswapV2Router02.sol": {
+      "lastModificationDate": 1627493338779,
+      "contentHash": "39586fe4778908697000465404c025df",
+      "sourceName": "contracts/TestUniswapV2Router02.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "TestUniswapV2Router02"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\TestQiLiquidator.sol": {
+      "lastModificationDate": 1627484779220,
+      "contentHash": "359ce9d033fbc4ddc41b0add9062e10c",
+      "sourceName": "contracts/TestQiLiquidator.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "TestQiLiquidator"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\node_modules\\hardhat\\console.sol": {
+      "lastModificationDate": 1626398272340,
+      "contentHash": "cc4777addd464ea56fa35b1c45df0591",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\MiMaticLiquidateCamWMatic.sol": {
+      "lastModificationDate": 1628173639777,
+      "contentHash": "81df37f57b4a2b4b95b9a37902690565",
+      "sourceName": "contracts/MiMaticLiquidateCamWMatic.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Ownable.sol",
+        "./FlashLoanReceiverBase.sol",
+        "./Interfaces.sol",
+        "./Libraries.sol",
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "MiMaticLiquidateCamWMatic"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\MiMaticLiquidateToken.sol": {
+      "lastModificationDate": 1628176480968,
+      "contentHash": "c502407cd7f91304b2488dcbf74de4df",
+      "sourceName": "contracts/MiMaticLiquidateToken.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Ownable.sol",
+        "./FlashLoanReceiverBase.sol",
+        "./Interfaces.sol",
+        "./Libraries.sol",
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "MiMaticLiquidateToken"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\MiMaticLiquidateCamToken.sol": {
+      "lastModificationDate": 1628249678991,
+      "contentHash": "72a0d305c17def24897973ce11559c91",
+      "sourceName": "contracts/MiMaticLiquidateCamToken.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Ownable.sol",
+        "./FlashLoanReceiverBase.sol",
+        "./Interfaces.sol",
+        "./Libraries.sol",
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "MiMaticLiquidateCamToken"
+      ]
+    }
+  }
+}

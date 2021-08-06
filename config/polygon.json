@@ -1,0 +1,78 @@
+{
+    "key": "137",
+    "chainId": 137,
+    "name": "Polygon Mainnet",
+    "shortName": "Polygon",
+    "network": "polygon",
+    "unknown": false,
+    "rpc": "https://rpc-mainnet.maticvigil.com/",
+    "wss":"wss://autumn-restless-shape.matic.quiknode.pro/a7d852307129c7ad38af9300b14624df071d3e97/",
+    "explorer": "https://polygonscan.com",
+    "liquidators": {
+      "MiMaticLiquidate":{
+        "type": "MATIC",
+        "deployedContract": "0xAD8C2d9195Ac81b1A3a0880f209EbE2f30338F6a",
+        "priceAggregator": "0x1278C74c3B2f8c3BcA0089b4E128fAf023615ECf",
+        "qiStableCoin": "0xa3Fa99A148fA48D14Ed51d610c367C61876997F1",
+        "qiLiquidator":"0x595B3E98641C4d66900a24aa6Ada590b41eF85AA",
+        "collateralRatio": 1.5,
+        "isCam": false
+      },
+      "MiMaticLiquidateCamWMatic":{
+        "type": "CamWMATIC",
+        "deployedContract": "0x16122e36CD3C3B2955b6B72c5d5C75b1E7FbDdAA",
+        "priceAggregator": "0x1278C74c3B2f8c3BcA0089b4E128fAf023615ECf",
+        "qiStableCoin": "0x88d84a85A87ED12B8f098e8953B322fF789fCD1a",
+        "qiLiquidator":"0x88d84a85A87ED12B8f098e8953B322fF789fCD1a",
+        "amToken": "0x8dF3aad3a84da6b69A4DA8aeC3eA40d9091B2Ac4",
+        "camToken": "0x7068Ea5255cb05931EFa8026Bd04b18F3DeB8b0B",
+        "collateralRatio": 1.55,
+        "isCam": true
+      },
+      "MiMaticLiquidateToken":{
+        "type":"Token",
+        "deployedContract":"0x2361d17631c96394446dc11DAB775b9543c8b87D",
+        "tokens":[
+          {
+            "token": "WETH",
+            "tokenAddress":"0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
+            "priceAggregator":"0x4dD6655Ad5ed7C06c882f496E3f42acE5766cb89",
+            "qiStableCoin":"0x3fd939B017b31eaADF9ae50C7fF7Fa5c0661d47C",
+            "qiLiquidator":"0x3fd939B017b31eaADF9ae50C7fF7Fa5c0661d47C",
+            "collateralRatio": 1.5        
+          }
+        ],
+        "isCam": false
+      },
+      "MiMaticLiquidateCamToken":{
+        "type":"CamToken",
+        "deployedContract":"0x7C6c85031Eae0dC3E9a57a6d7784c7CA6b28DD5a",
+        "tokens":[
+          {
+            "token": "CamWETH",
+            "tokenAddress":"0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
+            "priceAggregator":"0x4dD6655Ad5ed7C06c882f496E3f42acE5766cb89",
+            "qiStableCoin":"0x11A33631a5B5349AF3F165d2B7901A4d67e561ad",
+            "qiLiquidator":"0x11A33631a5B5349AF3F165d2B7901A4d67e561ad",
+            "amToken": "0x28424507fefb6f7f8E9D3860F56504E4e5f5f390",
+            "camToken": "0x0470CD31C8FcC42671465880BA81D631F0B76C1D",
+            "collateralRatio": 1.55
+          }
+        ],
+        "isCam": true
+      }
+    },
+    "addresses": {
+      "qiSwap": "0x947d711c25220d8301c087b25ba111fe8cbf6672",
+      "aaveLendingPoolAddressProvider":"0xd05e3E715d945B59290df0ae8eF85c1BdB684744",
+      "aaveLendingPool":"0x8dff5e27ea6b7ac08ebfdf9eb090f32ee9a30fcf",
+      "aaveWETHGateway":"0xbeadf48d62acc944a06eeae0a9054a90e5a7dc97",
+      "wMatic": "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
+      "usdc": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
+      "miMatic": "0xa3Fa99A148fA48D14Ed51d610c367C61876997F1",
+      "quickSwapRouter": "0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff",
+      "miMaticPriceAggregator": "0x1278C74c3B2f8c3BcA0089b4E128fAf023615ECf",
+      "miMaticPriceAggregatorProxy": "0xab594600376ec9fd91f8e885dadf0ce036862de0"
+    }
+}
+

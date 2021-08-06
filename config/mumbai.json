@@ -1,0 +1,19 @@
+{
+    "key": "80001",
+    "chainId": 80001,
+    "name": "Polygon Mumbai Testnet",
+    "shortName": "Mumbai",
+    "network": "mumbai",
+    "unknown": false,
+    "rpc": "https://polygon-mumbai.infura.io/v3/254de3ad404a423db4d6bd137b304b79",
+    "explorer": "https://mumbai.polygonscan.com",
+    "addresses": {
+      "aaveLendingPoolAddressProvider":"0x178113104fEcbcD7fF8669a0150721e231F0FD4B",
+      "aaveLendingPool":"0x9198F13B08E299d85E096929fA9781A1E3d5d",
+      "wMatic": "0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889",
+      "usdc": "0x2058A9D7613eEE744279e3856Ef0eAda5FCbaA7e",
+      "miMaticLiquidate": "0x6ddDD9d998F91808b47f41925870793eeded6D35",
+      "miMatic": "0xb3f014916214022e3245D23affAf587A7Dfd678D"
+    }
+}
+
