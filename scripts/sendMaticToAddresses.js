@@ -24,7 +24,7 @@ wallet = wallet.connect(rpcProvider);
 
 wallet = new NonceManager(wallet);
 
-const addresses = getWallets(40,10).map(wallet => {
+const addresses = getWallets(60,90).map(wallet => {
   return wallet.address;
 });
 

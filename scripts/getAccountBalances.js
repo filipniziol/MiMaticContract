@@ -13,7 +13,7 @@ else {
 
 const webSocketProvider = new ethers.providers.WebSocketProvider(config.wss);
 
-const addresses = getWallets(0,50).map(wallet => {
+const addresses = getWallets(00,150).map(wallet => {
   return wallet.address;
 });
 

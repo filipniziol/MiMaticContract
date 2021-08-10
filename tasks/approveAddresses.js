@@ -28,7 +28,7 @@ const approveAddresses = async function(network, liquidator, addressnumber){
   
   const miMaticLiquidateContract = new ethers.Contract(config.liquidators[liquidator].deployedContract,miMaticLiquidateContractAbi,wallet);
   
-  const tx = await miMaticLiquidateContract.approveAddresses(addresses, {gasPrice: ethers.utils.parseUnits('10', 'gwei'), gasLimit: 2000000});
+  const tx = await miMaticLiquidateContract.approveAddresses(addresses, {gasPrice: ethers.utils.parseUnits('10', 'gwei'), gasLimit: 5000000});
   
   const txResult = await tx.wait(1);
   
