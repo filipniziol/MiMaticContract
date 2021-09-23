@@ -5,6 +5,8 @@ const approveAddresses = require("./tasks/approveAddresses");
 const deploy = require("./tasks/deploy");
 const rugPull = require("./tasks/rugPull");
 const liquidateVault = require("./tasks/liquidateVault");
+const deployIronFinanceProcessor = require("./tasks/deployIronFinanceProcessor");
+const deployAaveUserData = require("./tasks/deployAaveUserData");
 
 const fs = require('fs');
 const mnemonic = fs.readFileSync(".secret").toString().trim();
@@ -63,8 +65,19 @@ module.exports = {
 task("approveAddresses", "Approves addresses for a given liquidator contract")
   .addParam("liquidator", "The name of liquidator contract in config file")
   .addParam("addressnumber", "Number of addresses to approve")
+  .addParam("secretfilename", "Name of the file with mnemonic for the approved accounts")
   .setAction(async (taskArgs, hre) => {
-    await approveAddresses(hre.network.name, taskArgs.liquidator, taskArgs.addressnumber)
+    await approveAddresses(hre.network.name, taskArgs.liquidator, taskArgs.addressnumber, taskArgs.secretfilename)
+  });
+
+ task("deployIronFinanceProcessor", "Deploy a given iron finance processor contract")
+  .setAction(async (taskArgs, hre) => {
+    await deployIronFinanceProcessor()
+  });
+
+  task("deployAaveUserData", "Deploy a given aave user data contract")
+  .setAction(async (taskArgs, hre) => {
+    await deployAaveUserData()
   });
 
 task("deploy", "Deploy a given liquidator contract")

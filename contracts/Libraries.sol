@@ -3,6 +3,8 @@ pragma solidity 0.6.12;
 pragma experimental ABIEncoderV2;
 
 import { IERC20 } from "./Interfaces.sol";
+import { DataTypes } from "./Libraries.sol";
+
 
 library SafeMath {
   /**

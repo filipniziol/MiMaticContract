@@ -78,8 +78,8 @@
       ]
     },
     "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\Interfaces.sol": {
-      "lastModificationDate": 1628173617626,
-      "contentHash": "a4e4fe5fa69a1b736ce056cfa4aed40f",
+      "lastModificationDate": 1632420550586,
+      "contentHash": "bf123f143f095b3edeaacea790c21d00",
       "sourceName": "contracts/Interfaces.sol",
       "solcConfig": {
         "version": "0.6.12",
@@ -113,19 +113,22 @@
         "IAaveWETHGateway",
         "IAmToken",
         "ICamToken",
+        "ICurve",
         "IERC20",
         "IFlashLoanReceiver",
+        "IIronSwap",
         "ILendingPool",
         "ILendingPoolAddressesProvider",
         "IQiLiquidator",
         "IQiLiquidatorV2",
+        "IReserve",
         "IUniswapV2Router01",
         "IUniswapV2Router02"
       ]
     },
     "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\Libraries.sol": {
-      "lastModificationDate": 1626075625644,
-      "contentHash": "1fd20ba8c4a2b3f3b95abf375442383e",
+      "lastModificationDate": 1632415800507,
+      "contentHash": "4ef9c0327de4bfcade5801ca84ac5b86",
       "sourceName": "contracts/Libraries.sol",
       "solcConfig": {
         "version": "0.6.12",
@@ -150,7 +153,8 @@
         }
       },
       "imports": [
-        "./Interfaces.sol"
+        "./Interfaces.sol",
+        "./Libraries.sol"
       ],
       "versionPragmas": [
         "0.6.12"
@@ -661,7 +665,7 @@
       ]
     },
     "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\MiMaticLiquidateToken.sol": {
-      "lastModificationDate": 1628176480968,
+      "lastModificationDate": 1628176482148,
       "contentHash": "c502407cd7f91304b2488dcbf74de4df",
       "sourceName": "contracts/MiMaticLiquidateToken.sol",
       "solcConfig": {
@@ -738,6 +742,82 @@
       ],
       "artifacts": [
         "MiMaticLiquidateCamToken"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\IronFinanceProcessor.sol": {
+      "lastModificationDate": 1631271997563,
+      "contentHash": "7551d29dd35199976b5587c2a7dd94d0",
+      "sourceName": "contracts/IronFinanceProcessor.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Ownable.sol",
+        "./FlashLoanReceiverBase.sol",
+        "./Interfaces.sol",
+        "./Libraries.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.12"
+      ],
+      "artifacts": [
+        "IronFinanceProcessor"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\AaveUserData.sol": {
+      "lastModificationDate": 1632421843118,
+      "contentHash": "15d9724de8988472fa8a58af169576ce",
+      "sourceName": "contracts/AaveUserData.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Interfaces.sol",
+        "./Libraries.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "AaveUserData"
       ]
     }
   }

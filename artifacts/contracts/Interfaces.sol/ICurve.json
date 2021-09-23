@@ -1,0 +1,39 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ICurve",
+  "sourceName": "contracts/Interfaces.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "i",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "j",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_dx",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_min_dy",
+          "type": "uint256"
+        }
+      ],
+      "name": "exchange_underlying",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

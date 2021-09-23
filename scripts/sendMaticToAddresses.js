@@ -24,7 +24,7 @@ wallet = wallet.connect(rpcProvider);
 
 wallet = new NonceManager(wallet);
 
-const addresses = getWallets(60,90).map(wallet => {
+const addresses = getWallets(0,120,"alibaba.secret").map(wallet => {
   return wallet.address;
 });
 
@@ -48,14 +48,14 @@ const main = async function(){
 
           const tx = await wallet.sendTransaction({
             to: addresses[i],
-            value: ethers.utils.parseEther("5.0"),
-            gasPrice: ethers.utils.parseUnits("75.0", "gwei")
+            value: ethers.utils.parseEther("1.0"),
+            gasPrice: ethers.utils.parseUnits("20.0", "gwei")
           });
 
           const txResult = await tx.wait(1);
           console.log(txResult.transactionHash);
 
-          console.log("5 MATIC has been sent to ", addresses[i]);
+          console.log("1 MATIC has been sent to ", addresses[i]);
       }
     }
 }; 

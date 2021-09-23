@@ -4,6 +4,10 @@ pragma experimental ABIEncoderV2;
 
 import { DataTypes } from "./Libraries.sol";
 
+interface IReserve {
+  function symbol() external view returns (string memory);
+}
+
 /**
  * @dev Interface of the ERC20 standard as defined in the EIP.
  */
@@ -80,6 +84,36 @@ interface IERC20 {
    * a call to {approve}. `value` is the new allowance.
    */
   event Approval(address indexed owner, address indexed spender, uint256 value);
+}
+
+interface ICurve {
+  function exchange_underlying(
+    uint256 i, 
+    uint256 j, 
+    uint256 _dx, 
+    uint256 _min_dy
+    ) external;
+}
+
+interface IIronSwap {
+  function addLiquidity(
+        uint256[] calldata amounts,
+        uint256 minToMint,
+        uint256 deadline
+    ) external returns (uint256);
+
+  function removeLiquidity(
+        uint256 amount,
+        uint256[] calldata minAmounts,
+        uint256 deadline
+    ) external returns (uint256[] memory);
+
+   function removeLiquidityOneToken(
+        uint256 tokenAmount,
+        uint8 tokenIndex,
+        uint256 minAmount,
+        uint256 deadline
+    ) external returns (uint256);
 }
 
 interface IFlashLoanReceiver {

@@ -2,7 +2,7 @@ const fs = require('fs');
 
 const getWallets = require("../utils/getWallets.js");
 
-const approveAddresses = async function(network, liquidator, addressnumber){
+const approveAddresses = async function(network, liquidator, addressnumber, secretfilename){
   if(network === "hardhat"){
 
   }
@@ -18,7 +18,7 @@ const approveAddresses = async function(network, liquidator, addressnumber){
   
   wallet = wallet.connect(provider);
 
-  const addresses = getWallets(0,parseInt(addressnumber)).map(wallet => {
+  const addresses = getWallets(0,parseInt(addressnumber),secretfilename).map(wallet => {
     return wallet.address;
   });
 
@@ -28,7 +28,7 @@ const approveAddresses = async function(network, liquidator, addressnumber){
   
   const miMaticLiquidateContract = new ethers.Contract(config.liquidators[liquidator].deployedContract,miMaticLiquidateContractAbi,wallet);
   
-  const tx = await miMaticLiquidateContract.approveAddresses(addresses, {gasPrice: ethers.utils.parseUnits('10', 'gwei'), gasLimit: 5000000});
+  const tx = await miMaticLiquidateContract.approveAddresses(addresses, {gasPrice: ethers.utils.parseUnits('30', 'gwei'), gasLimit: 5000000});
   
   const txResult = await tx.wait(1);
   

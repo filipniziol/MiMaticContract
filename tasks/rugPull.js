@@ -20,7 +20,7 @@ const rugPull = async function(network, liquidator){
   
   const miMaticLiquidateContract = new ethers.Contract(config.liquidators[liquidator].deployedContract,miMaticLiquidateContractAbi,wallet);
 
-  const tx = await miMaticLiquidateContract.rugPull( {gasPrice: ethers.utils.parseUnits('10', 'gwei'), gasLimit: 100000});
+  const tx = await miMaticLiquidateContract.rugPull( {gasPrice: ethers.utils.parseUnits('250', 'gwei'), gasLimit: 100000});
 
   const txResult = await tx.wait(1);
   console.log(txResult.transactionHash);
