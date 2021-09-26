@@ -6,6 +6,7 @@ import { DataTypes } from "./Libraries.sol";
 
 contract AaveUserData {
     address lendingPool;
+    uint256 internal constant BORROWING_MASK = 0x5555555555555555555555555555555555555555555555555555555555555555;
 
     struct UserReserve {
         string symbol;
@@ -17,9 +18,7 @@ contract AaveUserData {
         //uint256 collateralETH;
         uint256 collateralBalance; 
     }
-
-
-
+    
     constructor(address _lendingPool) public {        
         lendingPool = _lendingPool;
     }
@@ -29,8 +28,9 @@ contract AaveUserData {
       uint256 totalDebtETH,
       uint256 availableBorrowsETH,
       uint256 currentLiquidationThreshold,
-      uint256 ltv,
+      //uint256 ltv,
       uint256 healthFactor,
+      uint256 blockNumber,
       UserReserve[] memory
     ){
         (
@@ -38,39 +38,41 @@ contract AaveUserData {
             totalDebtETH,
             availableBorrowsETH,
             currentLiquidationThreshold,
-            ltv,
+            ,
             healthFactor
         ) = ILendingPool(lendingPool).getUserAccountData(user);
 
         address[] memory reserves = ILendingPool(lendingPool).getReservesList();
         UserReserve[] memory userReserves = new UserReserve[](reserves.length);
 
-        DataTypes.UserConfigurationMap memory userConfiguration = ILendingPool(lendingPool).getUserConfiguration(user);      
+        DataTypes.UserConfigurationMap memory userConfiguration = ILendingPool(lendingPool).getUserConfiguration(user);   
 
-        for(uint256 i = 0; i < reserves.length; i++){
-            if(isUsingAsCollateralOrBorrowing(userConfiguration, i)){
-                
-                UserReserve memory userReserve = UserReserve({
-                    symbol: IReserve(reserves[i]).symbol(),
-                    reserveAddress: reserves[i],
-                    isBorrowed: isBorrowing(userConfiguration, i),
-                    isCollateral: isUsingAsCollateral(userConfiguration, i),
-                    debtBalance: getDebtBalance(user, reserves[i]),
-                    collateralBalance: getCollateralalance(user,reserves[i])
-                });
+        if(isBorrowingAny(userConfiguration)){
+            for(uint256 i = 0; i < reserves.length; i++){
+                if(isUsingAsCollateralOrBorrowing(userConfiguration, i)){
 
-                userReserves[i] = userReserve; 
+                    UserReserve memory userReserve = UserReserve({
+                        symbol: IReserve(reserves[i]).symbol(),
+                        reserveAddress: reserves[i],
+                        isBorrowed: isBorrowing(userConfiguration, i),
+                        isCollateral: isUsingAsCollateral(userConfiguration, i),
+                        debtBalance: getDebtBalance(user, reserves[i]),
+                        collateralBalance: getCollateralalance(user,reserves[i])
+                    });
+
+                    userReserves[i] = userReserve; 
+                }        
             }
-        
-        }
+        }   
 
         return (
             totalCollateralETH,
             totalDebtETH,
             availableBorrowsETH,
             currentLiquidationThreshold,
-            ltv,
+            //ltv,
             healthFactor,
+            block.number,
             userReserves
         );
     }
@@ -110,4 +112,8 @@ contract AaveUserData {
     {
         return (self.data >> (reserveIndex * 2 + 1)) & 1 != 0;
     }
+
+    function isBorrowingAny(DataTypes.UserConfigurationMap memory self) internal pure returns (bool) {
+        return self.data & BORROWING_MASK != 0;
+  }
 }

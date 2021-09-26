@@ -784,8 +784,8 @@
       ]
     },
     "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\AaveUserData.sol": {
-      "lastModificationDate": 1632421843118,
-      "contentHash": "15d9724de8988472fa8a58af169576ce",
+      "lastModificationDate": 1632672311444,
+      "contentHash": "028956c12914f074b285ced1434089d4",
       "sourceName": "contracts/AaveUserData.sol",
       "solcConfig": {
         "version": "0.6.12",
