@@ -7,7 +7,8 @@ import { DataTypes } from "./Libraries.sol";
 contract AaveUserData {
     address lendingPool;
     uint256 internal constant BORROWING_MASK = 0x5555555555555555555555555555555555555555555555555555555555555555;
-
+    uint256 constant LIQUIDATION_THRESHOLD_MASK = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000FFFF; // prettier-ignore
+    uint256 constant LIQUIDATION_THRESHOLD_START_BIT_POSITION = 16;
     struct UserReserve {
         string symbol;
         address reserveAddress;
@@ -17,6 +18,7 @@ contract AaveUserData {
         bool isCollateral;
         //uint256 collateralETH;
         uint256 collateralBalance; 
+        uint256 liquidationThreshold;
     }
     
     constructor(address _lendingPool) public {        
@@ -57,7 +59,8 @@ contract AaveUserData {
                         isBorrowed: isBorrowing(userConfiguration, i),
                         isCollateral: isUsingAsCollateral(userConfiguration, i),
                         debtBalance: getDebtBalance(user, reserves[i]),
-                        collateralBalance: getCollateralalance(user,reserves[i])
+                        collateralBalance: getCollateralalance(user,reserves[i]),
+                        liquidationThreshold: getLiquidationThreshold(ILendingPool(lendingPool).getConfiguration(reserves[i]))
                     });
 
                     userReserves[i] = userReserve; 
@@ -115,5 +118,13 @@ contract AaveUserData {
 
     function isBorrowingAny(DataTypes.UserConfigurationMap memory self) internal pure returns (bool) {
         return self.data & BORROWING_MASK != 0;
-  }
+    }
+
+    function getLiquidationThreshold(DataTypes.ReserveConfigurationMap memory self)
+        internal
+        view
+    returns (uint256)
+    {
+        return (self.data & ~LIQUIDATION_THRESHOLD_MASK) >> LIQUIDATION_THRESHOLD_START_BIT_POSITION;
+    }
 }

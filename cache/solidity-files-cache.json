@@ -784,8 +784,8 @@
       ]
     },
     "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\AaveUserData.sol": {
-      "lastModificationDate": 1632672311444,
-      "contentHash": "028956c12914f074b285ced1434089d4",
+      "lastModificationDate": 1632919079636,
+      "contentHash": "2500145c8cb319be390fc2c0117f5399",
       "sourceName": "contracts/AaveUserData.sol",
       "solcConfig": {
         "version": "0.6.12",
@@ -818,6 +818,45 @@
       ],
       "artifacts": [
         "AaveUserData"
+      ]
+    },
+    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\AaveLiquidator.sol": {
+      "lastModificationDate": 1633342156532,
+      "contentHash": "73e35d7e0a3f23620646a44f50036435",
+      "sourceName": "contracts/AaveLiquidator.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Ownable.sol",
+        "./FlashLoanReceiverBase.sol",
+        "./Interfaces.sol",
+        "./Libraries.sol"
+      ],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "AaveLiquidator"
       ]
     }
   }
