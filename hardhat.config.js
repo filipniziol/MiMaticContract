@@ -2,11 +2,13 @@ require("@nomiclabs/hardhat-waffle");
 require('@openzeppelin/hardhat-upgrades');
 
 const approveAddresses = require("./tasks/approveAddresses");
+const approveAddressesAaveLiquidator = require("./tasks/approveAddressesAaveLiquidator");
 const deploy = require("./tasks/deploy");
 const rugPull = require("./tasks/rugPull");
 const liquidateVault = require("./tasks/liquidateVault");
 const deployIronFinanceProcessor = require("./tasks/deployIronFinanceProcessor");
 const deployAaveUserData = require("./tasks/deployAaveUserData");
+const deployAaveLiquidator = require("./tasks/deployAaveLiquidator");
 
 const fs = require('fs');
 const mnemonic = fs.readFileSync(".secret").toString().trim();
@@ -70,14 +72,26 @@ task("approveAddresses", "Approves addresses for a given liquidator contract")
     await approveAddresses(hre.network.name, taskArgs.liquidator, taskArgs.addressnumber, taskArgs.secretfilename)
   });
 
- task("deployIronFinanceProcessor", "Deploy a given iron finance processor contract")
+task("approveAddressesAaveLiquidator", "Approves addresses for a given aave liquidator contract")
+  .addParam("addressnumber", "Number of addresses to approve")
+  .addParam("secretfilename", "Name of the file with mnemonic for the approved accounts")
+  .setAction(async (taskArgs, hre) => {
+    await approveAddressesAaveLiquidator(hre.network.name, taskArgs.addressnumber, taskArgs.secretfilename)
+});
+
+task("deployIronFinanceProcessor", "Deploy a given iron finance processor contract")
   .setAction(async (taskArgs, hre) => {
     await deployIronFinanceProcessor()
   });
 
-  task("deployAaveUserData", "Deploy a given aave user data contract")
+task("deployAaveUserData", "Deploy a given aave user data contract")
   .setAction(async (taskArgs, hre) => {
     await deployAaveUserData()
+  });
+
+task("deployAaveLiquidator", "Deploy a given aave liquidator contract")
+  .setAction(async (taskArgs, hre) => {
+    await deployAaveLiquidator()
   });
 
 task("deploy", "Deploy a given liquidator contract")
