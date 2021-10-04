@@ -73,7 +73,8 @@
       "quickSwapRouter": "0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff",
       "miMaticPriceAggregator": "0x1278C74c3B2f8c3BcA0089b4E128fAf023615ECf",
       "miMaticPriceAggregatorProxy": "0xab594600376ec9fd91f8e885dadf0ce036862de0",
-      "IronFinanceProcessor": "0x7B448e401f3844F862288A6ce83F839031bE5879"
+      "IronFinanceProcessor": "0x7B448e401f3844F862288A6ce83F839031bE5879",
+      "AaveLiquidator":""
     }
 }
 

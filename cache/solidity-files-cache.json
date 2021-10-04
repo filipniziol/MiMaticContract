@@ -78,8 +78,8 @@
       ]
     },
     "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\Interfaces.sol": {
-      "lastModificationDate": 1632420550586,
-      "contentHash": "bf123f143f095b3edeaacea790c21d00",
+      "lastModificationDate": 1633349287939,
+      "contentHash": "53ad9d67bc2747bb5f841bf57fd8107b",
       "sourceName": "contracts/Interfaces.sol",
       "solcConfig": {
         "version": "0.6.12",
@@ -119,6 +119,7 @@
         "IIronSwap",
         "ILendingPool",
         "ILendingPoolAddressesProvider",
+        "IPriceOracleGetter",
         "IQiLiquidator",
         "IQiLiquidatorV2",
         "IReserve",
@@ -127,8 +128,8 @@
       ]
     },
     "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\Libraries.sol": {
-      "lastModificationDate": 1632415800507,
-      "contentHash": "4ef9c0327de4bfcade5801ca84ac5b86",
+      "lastModificationDate": 1633351110953,
+      "contentHash": "8a0de9532d329982c9b37c10d3007573",
       "sourceName": "contracts/Libraries.sol",
       "solcConfig": {
         "version": "0.6.12",
@@ -162,6 +163,8 @@
       "artifacts": [
         "Address",
         "DataTypes",
+        "Errors",
+        "ReserveConfiguration",
         "SafeERC20",
         "SafeMath"
       ]
@@ -821,8 +824,8 @@
       ]
     },
     "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\AaveLiquidator.sol": {
-      "lastModificationDate": 1633342156532,
-      "contentHash": "73e35d7e0a3f23620646a44f50036435",
+      "lastModificationDate": 1633355468039,
+      "contentHash": "47b89d544a5fdfb912a1e07513398857",
       "sourceName": "contracts/AaveLiquidator.sol",
       "solcConfig": {
         "version": "0.6.12",
