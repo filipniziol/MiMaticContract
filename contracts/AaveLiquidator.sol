@@ -81,7 +81,10 @@ contract AaveLiquidator is FlashLoanReceiverBase, Ownable {
         ILendingPool(aaveLendingPoolAddress).liquidationCall(receivedAsset,liquidatedAsset,liquidatedUser,liquidatedAmount, false);
 
         //swap received asset to borrowed asset to pay back the flash loan
-        executeSwapTokensForTokens(address(this),receivedAsset,IERC20(receivedAsset).balanceOf(address(this)),liquidatedAsset,liquidatedAmount);
+        if(receivedAsset != liquidatedAsset){
+            executeSwapTokensForTokens(address(this),receivedAsset,IERC20(receivedAsset).balanceOf(address(this)),liquidatedAsset,liquidatedAmount);
+        }
+
 
         for (uint i = 0; i < assets.length; i++) {
             uint amountOwing = amounts[i].add(premiums[i]);

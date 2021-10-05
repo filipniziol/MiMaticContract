@@ -5,6 +5,621 @@
       "AaveLiquidator": {
         "src": "contracts\\AaveLiquidator.sol:11",
         "version": {
+          "withMetadata": "8472f2acd18285ebf8fabfb93e06f6a4a55e387d5c323f79189b4d7196dbdab6",
+          "withoutMetadata": "d64151eb3ed7e672278860a88b8dbc20fc38a25ef589b14f4734e9727ba00f60",
+          "linkedWithoutMetadata": "d64151eb3ed7e672278860a88b8dbc20fc38a25ef589b14f4734e9727ba00f60"
+        },
+        "inherit": [
+          "Ownable",
+          "FlashLoanReceiverBase",
+          "IFlashLoanReceiver"
+        ],
+        "libraries": [
+          "SafeMath",
+          "ReserveConfiguration"
+        ],
+        "methods": [
+          "(address,address)",
+          "approveAddresses(address[])",
+          "liquidateUser(address)",
+          "executeOperation(address[],uint256[],uint256[],address,bytes)",
+          "executeSwapTokensForTokens(address,address,uint256,address,uint256)",
+          "executeFlashLoan(address,uint256)",
+          "getLiquidatedUserDetails(address)",
+          "withdrawMatic()",
+          "withdrawToken(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "AaveLiquidator",
+            "src": "contracts\\AaveLiquidator.sol:27"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "AaveLiquidator",
+              "label": "aaveLendingPoolAddressProvider",
+              "type": "t_contract(ILendingPoolAddressesProvider)1177",
+              "src": "contracts\\AaveLiquidator.sol:14"
+            },
+            {
+              "contract": "AaveLiquidator",
+              "label": "quickSwapRouter",
+              "type": "t_contract(IUniswapV2Router02)1976",
+              "src": "contracts\\AaveLiquidator.sol:15"
+            },
+            {
+              "contract": "AaveLiquidator",
+              "label": "aaveLendingPoolAddress",
+              "type": "t_address",
+              "src": "contracts\\AaveLiquidator.sol:17"
+            },
+            {
+              "contract": "AaveLiquidator",
+              "label": "aavePriceOracleAddress",
+              "type": "t_address",
+              "src": "contracts\\AaveLiquidator.sol:18"
+            },
+            {
+              "contract": "AaveLiquidator",
+              "label": "liquidatedUser",
+              "type": "t_address",
+              "src": "contracts\\AaveLiquidator.sol:20"
+            },
+            {
+              "contract": "AaveLiquidator",
+              "label": "liquidatedAsset",
+              "type": "t_address",
+              "src": "contracts\\AaveLiquidator.sol:21"
+            },
+            {
+              "contract": "AaveLiquidator",
+              "label": "liquidatedAmount",
+              "type": "t_uint256",
+              "src": "contracts\\AaveLiquidator.sol:22"
+            },
+            {
+              "contract": "AaveLiquidator",
+              "label": "receivedAsset",
+              "type": "t_address",
+              "src": "contracts\\AaveLiquidator.sol:23"
+            },
+            {
+              "contract": "AaveLiquidator",
+              "label": "approvedAddresses",
+              "type": "t_mapping(t_address,t_bool)",
+              "src": "contracts\\AaveLiquidator.sol:25"
+            }
+          ],
+          "types": {
+            "t_contract(ILendingPoolAddressesProvider)1177": {
+              "label": "contract ILendingPoolAddressesProvider"
+            },
+            "t_contract(IUniswapV2Router02)1976": {
+              "label": "contract IUniswapV2Router02"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)"
+            },
+            "t_bool": {
+              "label": "bool"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "FlashLoanReceiverBase": {
+        "src": "contracts\\FlashLoanReceiverBase.sol:7",
+        "inherit": [
+          "IFlashLoanReceiver"
+        ],
+        "libraries": [
+          "SafeERC20",
+          "SafeMath"
+        ],
+        "methods": [
+          "(address)",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "FlashLoanReceiverBase",
+            "src": "contracts\\FlashLoanReceiverBase.sol:14"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "FlashLoanReceiverBase",
+              "label": "_addressesProvider",
+              "type": "t_contract(ILendingPoolAddressesProvider)1177",
+              "src": "contracts\\FlashLoanReceiverBase.sol:11"
+            },
+            {
+              "contract": "FlashLoanReceiverBase",
+              "label": "_lendingPool",
+              "type": "t_contract(ILendingPool)1541",
+              "src": "contracts\\FlashLoanReceiverBase.sol:12"
+            }
+          ],
+          "types": {
+            "t_contract(ILendingPoolAddressesProvider)1177": {
+              "label": "contract ILendingPoolAddressesProvider"
+            },
+            "t_contract(ILendingPool)1541": {
+              "label": "contract ILendingPool"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "IAaveWETHGateway": {
+        "src": "contracts\\Interfaces.sol:749",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "withdrawETH(address,uint256,address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IAmToken": {
+        "src": "contracts\\Interfaces.sol:742",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "balanceOf(address)",
+          "approve(address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "ICamToken": {
+        "src": "contracts\\Interfaces.sol:733",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "balanceOf(address)",
+          "Token()",
+          "leave(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "ICurve": {
+        "src": "contracts\\Interfaces.sol:89",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "exchange_underlying(uint256,uint256,uint256,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IERC20": {
+        "src": "contracts\\Interfaces.sol:14",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IFlashLoanReceiver": {
+        "src": "contracts\\Interfaces.sol:119",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "executeOperation(address[],uint256[],uint256[],address,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IIronSwap": {
+        "src": "contracts\\Interfaces.sol:98",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "addLiquidity(uint256[],uint256,uint256)",
+          "removeLiquidity(uint256,uint256[],uint256)",
+          "removeLiquidityOneToken(uint256,uint8,uint256,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "ILendingPool": {
+        "src": "contracts\\Interfaces.sol:182",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "deposit(address,uint256,address,uint16)",
+          "withdraw(address,uint256,address)",
+          "borrow(address,uint256,uint256,uint16,address)",
+          "repay(address,uint256,uint256,address)",
+          "swapBorrowRateMode(address,uint256)",
+          "rebalanceStableBorrowRate(address,address)",
+          "setUserUseReserveAsCollateral(address,bool)",
+          "liquidationCall(address,address,address,uint256,bool)",
+          "flashLoan(address,address[],uint256[],uint256[],address,bytes,uint16)",
+          "getUserAccountData(address)",
+          "initReserve(address,address,address,address,address)",
+          "setReserveInterestRateStrategyAddress(address,address)",
+          "setConfiguration(address,uint256)",
+          "getConfiguration(address)",
+          "getUserConfiguration(address)",
+          "getReserveNormalizedIncome(address)",
+          "getReserveNormalizedVariableDebt(address)",
+          "getReserveData(address)",
+          "finalizeTransfer(address,address,address,uint256,uint256,uint256)",
+          "getReservesList()",
+          "getAddressesProvider()",
+          "setPause(bool)",
+          "paused()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "ILendingPoolAddressesProvider": {
+        "src": "contracts\\Interfaces.sol:136",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "setAddress(bytes32,address)",
+          "setAddressAsProxy(bytes32,address)",
+          "getAddress(bytes32)",
+          "getLendingPool()",
+          "setLendingPoolImpl(address)",
+          "getLendingPoolConfigurator()",
+          "setLendingPoolConfiguratorImpl(address)",
+          "getLendingPoolCollateralManager()",
+          "setLendingPoolCollateralManager(address)",
+          "getPoolAdmin()",
+          "setPoolAdmin(address)",
+          "getEmergencyAdmin()",
+          "setEmergencyAdmin(address)",
+          "getPriceOracle()",
+          "setPriceOracle(address)",
+          "getLendingRateOracle()",
+          "setLendingRateOracle(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IPriceOracleGetter": {
+        "src": "contracts\\Interfaces.sol:757",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "getAssetPrice(address)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IQiLiquidator": {
+        "src": "contracts\\Interfaces.sol:578",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "getPaid()",
+          "checkLiquidation(uint256)",
+          "checkCost(uint256)",
+          "liquidateVault(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IQiLiquidatorV2": {
+        "src": "contracts\\Interfaces.sol:588",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "getPaid()",
+          "checkLiquidation(uint256)",
+          "checkCost(uint256)",
+          "liquidateVault(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IReserve": {
+        "src": "contracts\\Interfaces.sol:7",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "symbol()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IUniswapV2Router01": {
+        "src": "contracts\\Interfaces.sol:598",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "factory()",
+          "WETH()",
+          "addLiquidity(address,address,uint256,uint256,uint256,uint256,address,uint256)",
+          "addLiquidityETH(address,uint256,uint256,uint256,address,uint256)",
+          "removeLiquidity(address,address,uint256,uint256,uint256,address,uint256)",
+          "removeLiquidityETH(address,uint256,uint256,uint256,address,uint256)",
+          "removeLiquidityWithPermit(address,address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)",
+          "removeLiquidityETHWithPermit(address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)",
+          "swapExactTokensForTokens(uint256,uint256,address[],address,uint256)",
+          "swapTokensForExactTokens(uint256,uint256,address[],address,uint256)",
+          "swapExactETHForTokens(uint256,address[],address,uint256)",
+          "swapTokensForExactETH(uint256,uint256,address[],address,uint256)",
+          "swapExactTokensForETH(uint256,uint256,address[],address,uint256)",
+          "swapETHForExactTokens(uint256,address[],address,uint256)",
+          "quote(uint256,uint256,uint256)",
+          "getAmountOut(uint256,uint256,uint256)",
+          "getAmountIn(uint256,uint256,uint256)",
+          "getAmountsOut(uint256,address[])",
+          "getAmountsIn(uint256,address[])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "IUniswapV2Router02": {
+        "src": "contracts\\Interfaces.sol:692",
+        "inherit": [
+          "IUniswapV2Router01"
+        ],
+        "libraries": [],
+        "methods": [
+          "removeLiquidityETHSupportingFeeOnTransferTokens(address,uint256,uint256,uint256,address,uint256)",
+          "removeLiquidityETHWithPermitSupportingFeeOnTransferTokens(address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)",
+          "swapExactTokensForTokensSupportingFeeOnTransferTokens(uint256,uint256,address[],address,uint256)",
+          "swapExactETHForTokensSupportingFeeOnTransferTokens(uint256,address[],address,uint256)",
+          "swapExactTokensForETHSupportingFeeOnTransferTokens(uint256,uint256,address[],address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Address": {
+        "src": "contracts\\Libraries.sol:157",
+        "version": {
+          "withMetadata": "40cd81c854e69997a10f44b569380477cbfe20cbba17f6336e4ed158d13d1411",
+          "withoutMetadata": "aaa148c474cd10e1a6cd0a52c0b55f1aa9b7bb7b42d7f1cb5acaea4f42f04bc8",
+          "linkedWithoutMetadata": "aaa148c474cd10e1a6cd0a52c0b55f1aa9b7bb7b42d7f1cb5acaea4f42f04bc8"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "DataTypes": {
+        "src": "contracts\\Libraries.sol:272",
+        "version": {
+          "withMetadata": "d8d9803792d33114fe64ea8b7d4faaca2a49ff7c1b8fa8c4f647a75566a04a8d",
+          "withoutMetadata": "aaa148c474cd10e1a6cd0a52c0b55f1aa9b7bb7b42d7f1cb5acaea4f42f04bc8",
+          "linkedWithoutMetadata": "aaa148c474cd10e1a6cd0a52c0b55f1aa9b7bb7b42d7f1cb5acaea4f42f04bc8"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Errors": {
+        "src": "contracts\\Libraries.sol:659",
+        "version": {
+          "withMetadata": "1fd17c192f796def13f991803968273e8dc01e4ab278728a5af4110defb809c1",
+          "withoutMetadata": "53eb952ed5666367631919146f39af38fabe97171e05f30d81d59c5799b8ba9c",
+          "linkedWithoutMetadata": "53eb952ed5666367631919146f39af38fabe97171e05f30d81d59c5799b8ba9c"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "ReserveConfiguration": {
+        "src": "contracts\\Libraries.sol:324",
+        "version": {
+          "withMetadata": "6485c605002a1bb8d879809538a123ae11eb7045e36ac37698151d22cb331a62",
+          "withoutMetadata": "aaa148c474cd10e1a6cd0a52c0b55f1aa9b7bb7b42d7f1cb5acaea4f42f04bc8",
+          "linkedWithoutMetadata": "aaa148c474cd10e1a6cd0a52c0b55f1aa9b7bb7b42d7f1cb5acaea4f42f04bc8"
+        },
+        "inherit": [],
+        "libraries": [
+          "Errors"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "SafeERC20": {
+        "src": "contracts\\Libraries.sol:224",
+        "version": {
+          "withMetadata": "9632847f603e0e7d52f56c90f6cf1215025149cc9d4726dc73f16f552f955cbf",
+          "withoutMetadata": "aaa148c474cd10e1a6cd0a52c0b55f1aa9b7bb7b42d7f1cb5acaea4f42f04bc8",
+          "linkedWithoutMetadata": "aaa148c474cd10e1a6cd0a52c0b55f1aa9b7bb7b42d7f1cb5acaea4f42f04bc8"
+        },
+        "inherit": [],
+        "libraries": [
+          "SafeMath",
+          "Address"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "SafeMath": {
+        "src": "contracts\\Libraries.sol:9",
+        "version": {
+          "withMetadata": "88c39435c2a3098d08203e183324b43745879e678104f1e4b5d32bef1b1f98bd",
+          "withoutMetadata": "aaa148c474cd10e1a6cd0a52c0b55f1aa9b7bb7b42d7f1cb5acaea4f42f04bc8",
+          "linkedWithoutMetadata": "aaa148c474cd10e1a6cd0a52c0b55f1aa9b7bb7b42d7f1cb5acaea4f42f04bc8"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      },
+      "Ownable": {
+        "src": "contracts\\Ownable.sol:12",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "isOwner()",
+          "renounceOwnership()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "contracts\\Ownable.sol:20"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Ownable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "contracts\\Ownable.sol:13"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      }
+    },
+    {
+      "AaveLiquidator": {
+        "src": "contracts\\AaveLiquidator.sol:11",
+        "version": {
           "withMetadata": "88884c0b0736a6050178f18300a4a211143c49f0fdffc2cf8ed17190800544b3",
           "withoutMetadata": "33c7764974375cf8090c19c265cb368ec152e004d909d73920fd5d5ba4ae7ce4",
           "linkedWithoutMetadata": "33c7764974375cf8090c19c265cb368ec152e004d909d73920fd5d5ba4ae7ce4"
