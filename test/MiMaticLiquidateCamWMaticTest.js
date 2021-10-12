@@ -54,33 +54,6 @@ describe("MiMaticLiquidateCamWMatic", function() {
       expect(await miMaticLiquidateCamWMatic.owner()).to.equal(owner.address);
     });
 
-    it("Should execute the flash loan", async function(){
-
-      const MiMaticLiquidateCamWMatic = await ethers.getContractFactory("MiMaticLiquidateCamWMatic");
-      const miMaticLiquidateCamWMatic = await MiMaticLiquidateCamWMatic.deploy(
-        testQiLiquidator.address,
-        testUniswapV2Router02.address, 
-        testLendingPoolAddressesProvider.address,
-        usdc.address, 
-        miMatic.address);
-      await miMaticLiquidateCamWMatic.deployed();
-
-      await miMaticLiquidateCamWMatic.approveAddresses([owner.address]);
-
-      await usdc.transfer(miMaticLiquidateCamWMatic.address, ethers.utils.parseUnits("0.1",6));
-      await usdc.transfer(testLendingPool.address, ethers.utils.parseUnits("1.0",6));
-
-      await miMaticLiquidateCamWMatic.executeFlashLoan(
-        usdc.address, ethers.utils.parseUnits("0.1",6),
-        ethers.utils.defaultAbiCoder.encode(
-          ["uint256 liquidatedVault", "uint256 liquidationCost", "uint256 borrowedUsdc", "uint256 timestamp"],
-          [ethers.BigNumber.from("0"),ethers.BigNumber.from("0"), ethers.BigNumber.from("0"), ethers.BigNumber.from("0")])
-      );
-     
-      expect(utils.formatUnits(await usdc.balanceOf(testLendingPool.address),6)).to.equal("1.0009");
-      expect(utils.formatUnits(await usdc.balanceOf(miMaticLiquidateCamWMatic.address),6)).to.equal("0.0991");
-    });
-
     it("Should rug pull all the tokens", async function() {
 
       const MiMaticLiquidateCamWMatic = await ethers.getContractFactory("MiMaticLiquidateCamWMatic");

@@ -747,45 +747,6 @@
         "MiMaticLiquidateCamToken"
       ]
     },
-    "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\IronFinanceProcessor.sol": {
-      "lastModificationDate": 1631271997563,
-      "contentHash": "7551d29dd35199976b5587c2a7dd94d0",
-      "sourceName": "contracts/IronFinanceProcessor.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./Ownable.sol",
-        "./FlashLoanReceiverBase.sol",
-        "./Interfaces.sol",
-        "./Libraries.sol"
-      ],
-      "versionPragmas": [
-        ">=0.6.12"
-      ],
-      "artifacts": [
-        "IronFinanceProcessor"
-      ]
-    },
     "C:\\Drive\\Programowanie\\Defi\\MiMaticContract\\contracts\\AaveUserData.sol": {
       "lastModificationDate": 1632919079636,
       "contentHash": "2500145c8cb319be390fc2c0117f5399",
